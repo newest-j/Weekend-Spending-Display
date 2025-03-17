@@ -1,8 +1,8 @@
-const budget = 100;
-let expense = "";
+const fixedBudget = 100;
+let myExpense = 0;
 const spending = {
-    budget:100,
-    expense:0,
+    budget:fixedBudget,
+    expense:myExpense,
     getRemaining:function(){
         let subtract = this.budget - this.expense;
         return subtract;
@@ -20,9 +20,9 @@ updateDisplay()
 
 
 function addExpense(){
-    expense = document.getElementById("expenseInput").value;
-    spending.expense = expense;
+    myExpense = document.getElementById("expenseInput").value;
+    spending.expense = myExpense;
     document.getElementById("expenseDisplay").innerText = "Spent:$" + spending.expense;
     document.getElementById("remainingDisplay").innerText =  "Remaining:$" + spending.getRemaining();
-    
+    document.getElementById("expenseInput").value = "";
 }
